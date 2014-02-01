@@ -1,6 +1,14 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
 
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -21,6 +29,7 @@ Bundle 'L9'
 Bundle 'FuzzyFinder'
 
 filetype plugin indent on     " required!
+syntax on
 " ====================================
 " Help
 " ====================================
