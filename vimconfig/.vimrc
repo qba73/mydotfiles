@@ -54,7 +54,7 @@ Plugin 'FuzzyFinder'
 call vundle#end()
 
 filetype plugin indent on     " required!
-autocmd filetype python set expendtab
+autocmd filetype python set expandtab
 syntax on
 " ====================================
 " Help
