@@ -1,34 +1,60 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
 
-
-set tabstop=4
+set hidden
+set nowrap          " dont wrap lines
+set tabstop=4       " a tab is four spaces
 set softtabstop=4
 set shiftwidth=4
 set shiftround
 set expandtab
+set backspace=indent,eol,start
+set autoindent
+set copyindent
+set shiftwidth=4
+set showmatch
+set ignorecase
+set smartcase
+set smarttab
+set hlsearch
+set incsearch
+
+set history=1000
+set undolevels=1000
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set title
+set visualbell
+set noerrorbells
 
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " =========================
 " My bundles:
 " =========================
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'davidhalter/jedi-vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'L9'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'rstacruz/sparkup'
+Plugin 'davidhalter/jedi-vim'
+"Plugin 'tpope/surround'
 
 " vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+Plugin 'FuzzyFinder'
+
+" Color schemas
+"Plugin 'tomasr/molokai'
+"Plugin 'flazz/vim-colorchemes'
+call vundle#end()
 
 filetype plugin indent on     " required!
+autocmd filetype python set expandtab
 syntax on
 " ====================================
 " Help
@@ -55,4 +81,8 @@ let g:jedi#show_call_signatures = "1"
 
 " I dont want to docstring autocompletion window to popup
 autocmd FileType python setlocal completeopt-=preview
+
+" Support for vim explorer
+let g:netrw_liststyle = 3
+map <leader>k :Explore<cr>
 
